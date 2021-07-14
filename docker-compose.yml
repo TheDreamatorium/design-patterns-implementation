@@ -1,0 +1,12 @@
+web:
+    build: .
+    ports:
+        - "8080:80"
+    volumes:
+        - ./src:/src
+    links:
+        - php
+php:
+    image: php:7-fpm
+    volumes:
+        - ./src:/src
